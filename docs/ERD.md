@@ -1,6 +1,6 @@
 # ERD target
 
-Model berikut adalah rancangan, belum berupa migrasi yang dijalankan. FK, indeks dan aturan penghapusan harus ditetapkan saat implementasi; versi soal dan riwayat keuangan tidak boleh terhapus secara kaskade.
+Diagram berikut mencakup rancangan target. Model awal users, auth_sessions, password_reset_tokens, membership_plans, subscriptions, usage_records, questions, question_versions, question_options, dan audit_logs sudah memiliki migrasi; entitas lain belum diimplementasikan. FK, indeks dan aturan penghapusan harus ditetapkan saat implementasi; versi soal dan riwayat keuangan tidak boleh terhapus secara kaskade.
 
 ```mermaid
 erDiagram

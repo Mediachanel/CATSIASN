@@ -1,0 +1,3 @@
+# Deployment lokal
+
+Jalankan sesuai README. Compose saat ini hanya mengoperasikan PostgreSQL dan Redis secara teruji; kedua port terikat pada localhost. MinIO adalah profil opsional yang saat ini terblokir karena image registry tidak tersedia; tidak ada aplikasi atau worker dalam Compose. Contoh `.env` berisi kredensial dummy dan harus diganti. `.env` tidak masuk Git. Untuk staging dan produksi, HTTPS, secret manager, database dan storage terkelola, backup, restore drill, migrasi terkontrol, keamanan, monitoring dan worker masih harus dirancang dan diuji. Jangan men-deploy baseline ini untuk pengguna.

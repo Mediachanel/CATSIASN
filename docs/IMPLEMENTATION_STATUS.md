@@ -1,15 +1,15 @@
 # Status implementasi
 
-Tanggal: 2026-11-06. Folder awal kosong; repository Git diinisialisasi.
+Pembaruan 2026-11-06. Ini checkpoint parsial, bukan MVP atau penyelesaian Phase 1.
 
-- Phase 0: dokumen awal PRD, arsitektur, ERD konseptual dan UI/UX dibuat; dokumen lengkap masih perlu dilanjutkan.
-- Phase 1: fondasi Next.js, halaman publik, dan fungsi scoring awal; autentikasi, RBAC, Prisma, seed, Docker Compose dan worker belum ada.
-- Phase 2?8: belum diimplementasikan. Tidak ada ujian, bank soal, pembayaran, keanggotaan, admin, atau klaim production readiness.
-- Target 3.000 soal terverifikasi: belum tersedia. Kapasitas 1.000 peserta: belum diuji.
-- Docker CLI terpasang tetapi daemon tidak aktif (named pipe dockerDesktopLinuxEngine tidak ditemukan); migrasi dan pengujian layanan terblokir sampai Docker Desktop dimulai.
+- Phase 0: PRD, arsitektur, ERD dan UI/UX awal tersedia; dokumen lengkap masih perlu dilanjutkan.
+- Phase 1: halaman publik, skema dan client Prisma awal, dua migrasi, seed dua paket contoh, PostgreSQL dan Redis lokal. Tabel awal mencakup user, session, reset token, paket, subscription, usage, pertanyaan/versi/opsi, dan audit. Model tersebut belum berarti fitur aplikasi sudah tersedia.
+- Auth.js, Argon2id, MFA, RBAC, app/worker pada Compose, dan MinIO belum berfungsi. Image MinIO tidak dapat diunduh dari registry; profil storage belum teruji. Tidak ada API autentikasi atau admin.
+- Phase 2?8: belum diimplementasikan. Tidak ada ujian, bank soal terverifikasi, pembayaran, keanggotaan operasional, admin, atau klaim production readiness.
+- Target 3.000 soal terverifikasi belum tersedia. Kapasitas 1.000 peserta belum diuji.
 
-Lihat README untuk perintah pengujian yang tersedia. Periksa hasil aktual di terminal sebelum menganggap suatu pemeriksaan lulus.
+## Bukti checkpoint database
 
-## Bukti pemeriksaan baseline
+Docker Desktop diaktifkan; PostgreSQL dan Redis sehat pada Compose. PostgreSQL host menggunakan port 55432 karena 5432 sudah ditempati. Prisma validate dan dua migrasi berhasil; migrate status up to date. Seed diulang dan integration check memverifikasi dua paket tersedia serta check constraint menolak harga negatif. Migrasi kedua sempat gagal karena BOM UTF-8; status ditandai rolled back dan migrasi yang diperbaiki berhasil diterapkan. Tidak ada pengujian integrasi auth, browser, atau beban.
 
-Pada 2026-11-06: `npm run lint`, `npm run typecheck`, `npm test` (4 tes), dan `npm run build` lulus. `npm audit --omit=dev` melaporkan 0 kerentanan; `npm audit` melaporkan 8 kerentanan moderate pada rantai dependensi pengembangan minimatch/typescript-eslint/eslint-config-next. Perbaikan otomatis yang ditawarkan memerlukan downgrade breaking; masalah ini belum diselesaikan. Tidak ada pengujian integrasi, browser, migrasi atau load test. Ini adalah checkpoint fondasi parsial, bukan penyelesaian phase 1.
+Lint, typecheck, empat tes scoring, dan build baseline diperiksa kembali; lihat hasil akhir pada commit dan output pengujian. Audit terbaru melaporkan 11 kerentanan: 3 high pada dependensi Prisma/deepmerge-ts dan 8 moderate pada dependensi ESLint/minimatch; `npm audit --omit=dev` juga melaporkan 3 high karena relasi dependensi Prisma. Penyelesaian yang ditawarkan npm memerlukan upgrade major; belum diperbaiki dan merupakan blocker produksi. MinIO upstream tidak dapat diunduh. Tidak ada secret yang dicommit.
