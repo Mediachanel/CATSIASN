@@ -1,0 +1,6 @@
+import Link from "next/link";
+import { login } from "../actions";
+export default async function Login({ searchParams }: { searchParams: Promise<{ error?: string; registered?: string }> }) {
+  const params = await searchParams;
+  return <main className="auth-shell"><section className="auth-card"><Link className="auth-brand" href="/">CAT <b>NUSANTARA</b></Link><p className="eyebrow">SELAMAT DATANG KEMBALI</p><h1>Masuk ke akunmu.</h1><p>Siapkan langkah berikutnya dalam perjalananmu.</p>{params.registered && <p className="form-message" role="status">Akun berhasil dibuat. Silakan masuk.</p>}{params.error && <p className="form-error" role="alert">Email atau kata sandi tidak sesuai, atau layanan sementara tidak tersedia.</p>}<form action={login}><label htmlFor="email">Email</label><input id="email" name="email" type="email" autoComplete="email" required maxLength={254}/><label htmlFor="password">Kata sandi</label><input id="password" name="password" type="password" autoComplete="current-password" required maxLength={128}/><button className="primary" type="submit">Masuk <span>?</span></button></form><p>Belum punya akun? <Link className="text-link" href="/register">Daftar</Link></p></section></main>
+}

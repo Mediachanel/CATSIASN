@@ -5,3 +5,6 @@ node_modules/
 !.env.example
 coverage/
 *.tsbuildinfo
+
+test-results/
+playwright-report/
