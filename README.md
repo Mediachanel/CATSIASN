@@ -1,23 +1,22 @@
 # CAT Nusantara
 
-Fondasi awal aplikasi persiapan CAT CPNS independen; belum siap dipakai untuk ujian atau pembayaran. Lihat [status implementasi](docs/IMPLEMENTATION_STATUS.md).
+Platform latihan CAT CPNS independen. Alur peserta yang tersedia mencakup akun, pemilihan simulasi, sesi SKD 110 soal, penyimpanan jawaban, timer, dan hasil skor. Ini bukan aplikasi resmi atau afiliasi BKN; event internal memakai bank soal DRAFT sampai lolos validasi ahli. Lihat [status implementasi](docs/IMPLEMENTATION_STATUS.md).
 
 ## Setup lokal
 
-Prasyarat: Node.js 24, npm, Docker Desktop. Salin `.env.example` menjadi `.env`, ganti password lokal, buat `AUTH_SECRET` acak dengan perintah pada `.env.example`, dan pastikan `DATABASE_URL` sesuai dengan kredensial PostgreSQL. Contoh ini hanya untuk pengembangan. Port PostgreSQL host adalah 55432 agar tidak mengganggu instalasi yang sudah ada.
+Prasyarat: Node.js 24, npm, PostgreSQL, dan Redis yang berjalan secara lokal. Salin `.env.example` menjadi `.env`, ganti password lokal, buat `AUTH_SECRET` acak dengan perintah pada `.env.example`, lalu pastikan `DATABASE_URL` dan `REDIS_URL` mengarah ke layanan lokal Anda. Contoh ini hanya untuk pengembangan.
 
 ```powershell
 npm ci
-docker compose up -d --wait postgres redis
 npm run db:generate
 npm run db:migrate
 npm run db:seed
-npm run dev
+npm run dev -- --hostname 127.0.0.1 --port 3100
 ```
 
-Buka http://localhost:3000. Seed hanya menambahkan paket contoh yang belum ada dan tidak menimpa pengaturan paket yang sudah ada. Data tersimpan dalam volume Docker; `docker compose down` menghentikan layanan tanpa menghapus volume. Jangan gunakan `down -v` jika ingin mempertahankan data.
+Buka http://localhost:3100. Seed menambahkan event internal SKD 110 soal bila belum ada. Jangan menjalankan migrasi terhadap database produksi.
 
-Pemeriksaan: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`, `npm run test:integration` (memerlukan database yang sudah dimigrasi dan di-seed). MinIO berada pada profil `storage`, tetapi image upstream pada konfigurasi saat ini tidak berhasil diunduh dan belum dapat digunakan. Compose menyediakan app dan worker, tetapi worker saat ini hanya memproses job pemeriksaan, belum ada rekonsiliasi pembayaran atau analitik. Registrasi dan login peserta tersedia untuk pengujian lokal; reset password, MFA, RBAC admin, bank soal, ujian, dan pembayaran belum diimplementasikan. Jangan gunakan pada produksi.
+Pemeriksaan: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`, `npm run test:integration` (memerlukan database yang sudah dimigrasi dan di-seed), serta `npm run test:e2e` (juga memerlukan Chromium Playwright dan database/Redis aktif). Registrasi/login serta sesi ujian peserta tersedia untuk pengujian lokal; reset password, MFA, RBAC admin, bank soal tervalidasi, pembayaran, dan fitur operasional belum tersedia. Jangan gunakan pada produksi.
 
 Lihat [PRD](docs/PRD.md), [arsitektur](docs/ARCHITECTURE.md), [ERD](docs/ERD.md), dan [UI/UX](docs/UI_UX.md).
 

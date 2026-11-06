@@ -32,6 +32,18 @@ enum QuestionStatus {
   ARCHIVED
 }
 
+enum EventStatus {
+  DRAFT
+  PUBLISHED
+  ARCHIVED
+}
+
+enum ExamSessionStatus {
+  IN_PROGRESS
+  SUBMITTED
+  EXPIRED
+}
+
 model User {
   id            String               @id @default(cuid())
   email         String               @unique
@@ -44,6 +56,7 @@ model User {
   resets        PasswordResetToken[]
   subscriptions Subscription[]
   auditLogs     AuditLog[]
+  examSessions  ExamSession[]
 
   @@index([role])
   @@map("users")
@@ -131,22 +144,100 @@ model Question {
 }
 
 model QuestionVersion {
-  id            String               @id @default(cuid())
-  questionId    String
-  version       Int
-  status        QuestionStatus       @default(DRAFT)
-  prompt        String
-  explanation   String?
-  isDemo        Boolean              @default(false)
-  importBatchId String?
-  createdAt     DateTime             @default(now())
-  question      Question             @relation(fields: [questionId], references: [id], onDelete: Restrict)
-  importBatch   QuestionImportBatch? @relation(fields: [importBatchId], references: [id], onDelete: SetNull)
-  options       QuestionOption[]
+  id               String               @id @default(cuid())
+  questionId       String
+  version          Int
+  status           QuestionStatus       @default(DRAFT)
+  prompt           String
+  explanation      String?
+  isDemo           Boolean              @default(false)
+  importBatchId    String?
+  createdAt        DateTime             @default(now())
+  question         Question             @relation(fields: [questionId], references: [id], onDelete: Restrict)
+  importBatch      QuestionImportBatch? @relation(fields: [importBatchId], references: [id], onDelete: SetNull)
+  options          QuestionOption[]
+  sessionQuestions SessionQuestion[]
 
   @@unique([questionId, version])
   @@index([status, isDemo])
   @@map("question_versions")
+}
+
+model TryoutEvent {
+  id              String        @id @default(cuid())
+  code            String        @unique
+  title           String
+  description     String?
+  status          EventStatus   @default(DRAFT)
+  isInternalDemo  Boolean       @default(false)
+  durationMinutes Int           @default(100)
+  twkCount        Int           @default(30)
+  tiuCount        Int           @default(35)
+  tkpCount        Int           @default(45)
+  createdAt       DateTime      @default(now())
+  sessions        ExamSession[]
+
+  @@map("tryout_events")
+}
+
+model ExamSession {
+  id          String            @id @default(cuid())
+  userId      String
+  eventId     String
+  status      ExamSessionStatus @default(IN_PROGRESS)
+  startedAt   DateTime          @default(now())
+  deadlineAt  DateTime
+  submittedAt DateTime?
+  createdAt   DateTime          @default(now())
+  user        User              @relation(fields: [userId], references: [id], onDelete: Restrict)
+  event       TryoutEvent       @relation(fields: [eventId], references: [id], onDelete: Restrict)
+  questions   SessionQuestion[]
+  result      ExamResult?
+
+  @@index([userId, status])
+  @@index([eventId, status])
+  @@map("exam_sessions")
+}
+
+model SessionQuestion {
+  id                String          @id @default(cuid())
+  sessionId         String
+  questionVersionId String
+  position          Int
+  optionOrder       Json
+  correctOption     String?
+  optionWeights     Json?
+  session           ExamSession     @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  questionVersion   QuestionVersion @relation(fields: [questionVersionId], references: [id], onDelete: Restrict)
+  answer            ExamAnswer?
+
+  @@unique([sessionId, position])
+  @@index([sessionId])
+  @@map("session_questions")
+}
+
+model ExamAnswer {
+  id                String          @id @default(cuid())
+  sessionQuestionId String          @unique
+  selectedOption    String
+  createdAt         DateTime        @default(now())
+  updatedAt         DateTime        @updatedAt
+  sessionQuestion   SessionQuestion @relation(fields: [sessionQuestionId], references: [id], onDelete: Cascade)
+
+  @@map("exam_answers")
+}
+
+model ExamResult {
+  id         String      @id @default(cuid())
+  sessionId  String      @unique
+  twkScore   Int
+  tiuScore   Int
+  tkpScore   Int
+  totalScore Int
+  createdAt  DateTime    @default(now())
+  session    ExamSession @relation(fields: [sessionId], references: [id], onDelete: Restrict)
+
+  @@map("exam_results")
 }
 
 model QuestionImportBatch {

@@ -5,10 +5,12 @@ Pembaruan 2026-11-06. Ini checkpoint parsial, bukan MVP atau penyelesaian Phase 
 - Phase 0: PRD, arsitektur, ERD dan UI/UX awal tersedia; dokumen lengkap masih perlu dilanjutkan.
 - Phase 1: halaman publik, skema dan client Prisma awal, dua migrasi, seed dua paket contoh, PostgreSQL dan Redis lokal. Tabel awal mencakup user, session, reset token, paket, subscription, usage, pertanyaan/versi/opsi, dan audit. Model tersebut belum berarti fitur aplikasi sudah tersedia.
 - Registrasi/login/logout peserta menggunakan Auth.js Credentials, Argon2id, JWT dan rate limit per email pada Redis tersedia untuk pengujian lokal. MFA, RBAC admin, dan MinIO belum berfungsi. App dan worker tersedia di Compose; worker baru menerima job pemeriksaan. Image MinIO tidak dapat diunduh dari registry; profil storage belum teruji. Auth.js tersedia pada /api/v1/auth; tidak ada API admin.
-- Phase 2?8: belum diimplementasikan. Tidak ada ujian, bank soal terverifikasi, pembayaran, keanggotaan operasional, admin, atau klaim production readiness.
+- Engine ujian peserta tersedia untuk event yang diterbitkan: sistem memilih komposisi soal per kategori, membuat snapshot urutan soal dan opsi per sesi, menyimpan jawaban, menghitung timer dari deadline server, menilai di server, dan menyimpan hasil TWK/TIU/TKP/total. Peserta dapat melanjutkan sesi yang belum habis. Kunci, bobot, dan pembahasan tidak dikirim ke browser selama sesi.
+- Halaman depan, daftar tryout, dashboard, ruang ujian, dan hasil telah dirombak dari preview menjadi alur peserta yang tersambung ke database. Event `DEMO-SKD-110` sengaja diberi label internal karena memakai soal DRAFT.
+- Bank soal terverifikasi, pembayaran, keanggotaan operasional, admin, reset password, MFA, dan klaim production readiness belum tersedia.
 - Target 3.000 soal terverifikasi belum tersedia. Kapasitas 1.000 peserta belum diuji.
 - Tiga batch draft bank soal sudah diimpor ke database: 9.000 soal, 9.000 versi, dan 45.000 opsi. Seluruhnya berstatus DRAFT dan `isDemo=true`; belum terverifikasi, belum dipublikasikan, dan bukan soal resmi BKN.
-- Audit visual tahap kedua lulus pada login dan shell preview `/exam` di 1366×768; screenshot production dan tes Playwright tersedia. Shell ujian masih preview frontend dan belum terhubung ke sesi, timer server, autosave, scoring, atau submit.
+- Audit visual tahap kedua pada resolusi 1366×768 lulus untuk landing dan login. Ruang ujian kini memakai layout kerja dua kolom dengan timer, progres, opsi, dan navigasi soal yang hidup; pengujian browser alur penuh masih menunggu PostgreSQL/Redis lokal yang dikonfigurasi aplikasi aktif.
 
 ## Bukti checkpoint database
 
