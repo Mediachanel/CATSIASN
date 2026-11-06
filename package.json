@@ -13,11 +13,15 @@
     "db:migrate": "prisma migrate deploy",
     "db:seed": "node prisma/seed.mjs",
     "test:integration": "node tests/integration/database.mjs",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "worker": "node worker/index.mjs",
+    "test:worker": "node scripts/check-worker.mjs"
   },
   "dependencies": {
     "@prisma/client": "^6.19.3",
     "argon2": "^0.45.2",
+    "bullmq": "^6.7.1",
+    "ioredis": "^6.0.0",
     "next": "^16.4.5",
     "next-auth": "^5.0.0-beta.32",
     "react": "^19.3.1",
