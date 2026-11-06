@@ -16,6 +16,18 @@ async function main() {
     rejected = true;
   }
   assert.ok(rejected, 'database must reject negative prices');
+  const batches = await prisma.questionImportBatch.findMany({ orderBy: { code: 'asc' }, select: { code: true, rowCount: true } });
+  assert.deepEqual(batches, [
+    { code: 'BATCH01', rowCount: 3000 },
+    { code: 'BATCH02', rowCount: 3000 },
+    { code: 'BATCH03', rowCount: 3000 },
+  ]);
+  assert.equal(await prisma.question.count(), 9000);
+  assert.equal(await prisma.questionVersion.count({ where: { status: 'DRAFT', isDemo: true } }), 9000);
+  assert.equal(await prisma.questionOption.count(), 45000);
+  const categoryCounts = await prisma.question.groupBy({ by: ['category'], _count: true });
+  assert.deepEqual(Object.fromEntries(categoryCounts.map(row => [row.category, row._count])), { TWK: 2250, TIU: 3150, TKP: 3600 });
+  assert.equal(await prisma.questionOption.count({ where: { weight: { not: null } } }), 18000);
   console.log('Database integration checks passed: seeded plans and check constraint.');
 }
 main().catch(error => { console.error(error); process.exitCode = 1; }).finally(() => prisma.$disconnect());

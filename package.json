@@ -12,6 +12,7 @@
     "db:generate": "prisma generate",
     "db:migrate": "prisma migrate deploy",
     "db:seed": "node prisma/seed.mjs",
+    "db:import-question-bank": "node scripts/import-question-bank.mjs",
     "test:integration": "node tests/integration/database.mjs",
     "test:e2e": "playwright test",
     "worker": "node worker/index.mjs",

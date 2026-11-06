@@ -21,6 +21,10 @@ Pemeriksaan: `npm run lint`, `npm run typecheck`, `npm test`, `npm run build`, `
 
 Lihat [PRD](docs/PRD.md), [arsitektur](docs/ARCHITECTURE.md), [ERD](docs/ERD.md), dan [UI/UX](docs/UI_UX.md).
 
+## Import bank soal draft
+
+Tiga file `bank_soal_3000_DRAFT.json`, `bank_soal_3000_BATCH02_DRAFT.json`, dan `bank_soal_3000_BATCH03_DRAFT.json` di folder proyek dapat diimpor setelah migrasi dengan `npm run db:import-question-bank`. Perintah ini memvalidasi dan menyimpan seluruh 9.000 baris sebagai DRAFT internal. Jalankan `npm run test:integration` untuk memeriksa jumlah batch, soal, versi, opsi, distribusi kategori, dan bobot TKP.
+
 ## Tes autentikasi browser
 
 Setelah database dan Redis siap, jalankan `npx playwright install chromium` sekali, lalu `npm run test:e2e`. Pengujian membuat akun unik dan menghapusnya setelah selesai; gunakan hanya database pengembangan. Pada Windows pengujian juga dapat menggunakan Edge yang sudah terpasang dengan mengatur `PLAYWRIGHT_BROWSER_PATH` ke path executable browser.

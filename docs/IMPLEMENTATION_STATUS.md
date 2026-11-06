@@ -7,6 +7,7 @@ Pembaruan 2026-11-06. Ini checkpoint parsial, bukan MVP atau penyelesaian Phase 
 - Registrasi/login/logout peserta menggunakan Auth.js Credentials, Argon2id, JWT dan rate limit per email pada Redis tersedia untuk pengujian lokal. MFA, RBAC admin, dan MinIO belum berfungsi. App dan worker tersedia di Compose; worker baru menerima job pemeriksaan. Image MinIO tidak dapat diunduh dari registry; profil storage belum teruji. Auth.js tersedia pada /api/v1/auth; tidak ada API admin.
 - Phase 2?8: belum diimplementasikan. Tidak ada ujian, bank soal terverifikasi, pembayaran, keanggotaan operasional, admin, atau klaim production readiness.
 - Target 3.000 soal terverifikasi belum tersedia. Kapasitas 1.000 peserta belum diuji.
+- Tiga batch draft bank soal sudah diimpor ke database: 9.000 soal, 9.000 versi, dan 45.000 opsi. Seluruhnya berstatus DRAFT dan `isDemo=true`; belum terverifikasi, belum dipublikasikan, dan bukan soal resmi BKN.
 
 ## Bukti checkpoint database
 
@@ -23,3 +24,7 @@ Auth.js v5 saat ini berlabel beta. Pendaftaran divalidasi Zod, password disimpan
 App, PostgreSQL, Redis, dan worker berhasil dijalankan pada Docker Compose. Migrasi di container sudah terkini. Endpoint liveness dan readiness mengembalikan status ok saat diuji; readiness hanya menguji koneksi PostgreSQL dan Redis, bukan versi skema atau worker. Job health-check BullMQ berhasil diproses oleh worker container. Playwright terhadap app container lulus registrasi, password salah, login, dashboard, dan logout. Build awal gagal karena kedua service bersaing memberi nama image yang sama; konfigurasi diperbaiki agar image hanya dibangun sekali. Pengujian browser awal menemukan `UntrustedHost`; Compose lokal dikonfigurasi untuk mempercayai host dan pengujian ulang lulus. Pengaturan host harus ditinjau saat memakai reverse proxy produksi.
 
 Sembilan tes unit lulus, termasuk respons readiness ketika dependency gagal. Audit produksi masih melaporkan 3 high pada rantai Prisma; belum diperbaiki. MinIO belum tersedia; worker belum menjalankan job bisnis, belum ada metrics lengkap, backup, atau uji beban.
+
+## Checkpoint import bank soal
+
+`npm run db:import-question-bank` berhasil memvalidasi dan mengimpor `bank_soal_3000_DRAFT.json`, `bank_soal_3000_BATCH02_DRAFT.json`, dan `bank_soal_3000_BATCH03_DRAFT.json`. Masing-masing berisi 3.000 baris: TWK 750, TIU 1.050, TKP 1.200. Kode soal di ketiga file unik. TKP disimpan tanpa kunci tunggal dan dengan lima bobot opsi; kolom media belum menjadi asset storage. Import ulang berhasil tanpa menambah jumlah record, sehingga checkpoint ini idempotent. Karena source label menyatakan generated/internal dan catatan review masih ada, target 3.000 soal terverifikasi belum boleh dianggap tercapai.
