@@ -8,6 +8,7 @@ Pembaruan 2026-11-06. Ini checkpoint parsial, bukan MVP atau penyelesaian Phase 
 - Phase 2?8: belum diimplementasikan. Tidak ada ujian, bank soal terverifikasi, pembayaran, keanggotaan operasional, admin, atau klaim production readiness.
 - Target 3.000 soal terverifikasi belum tersedia. Kapasitas 1.000 peserta belum diuji.
 - Tiga batch draft bank soal sudah diimpor ke database: 9.000 soal, 9.000 versi, dan 45.000 opsi. Seluruhnya berstatus DRAFT dan `isDemo=true`; belum terverifikasi, belum dipublikasikan, dan bukan soal resmi BKN.
+- Audit visual tahap kedua lulus pada login dan shell preview `/exam` di 1366×768; screenshot production dan tes Playwright tersedia. Shell ujian masih preview frontend dan belum terhubung ke sesi, timer server, autosave, scoring, atau submit.
 
 ## Bukti checkpoint database
 
