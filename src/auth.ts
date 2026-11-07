@@ -9,6 +9,9 @@ import { loginSchema } from "./lib/validation/auth";
 let dummyHash: Promise<string> | undefined;
 export const { handlers, auth, signIn, signOut } = NextAuth({
   basePath: "/api/v1/auth",
+  // This self-hosted app derives its callback URL from the request host.
+  // Deployments must restrict which hosts can reach the application.
+  trustHost: true,
   pages: { signIn: "/login" },
   session: { strategy: "jwt", maxAge: 60 * 60 * 8 },
   providers: [Credentials({
