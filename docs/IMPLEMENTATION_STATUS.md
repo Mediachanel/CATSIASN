@@ -31,3 +31,27 @@ Sembilan tes unit lulus, termasuk respons readiness ketika dependency gagal. Aud
 ## Checkpoint import bank soal
 
 `npm run db:import-question-bank` berhasil memvalidasi dan mengimpor `bank_soal_3000_DRAFT.json`, `bank_soal_3000_BATCH02_DRAFT.json`, dan `bank_soal_3000_BATCH03_DRAFT.json`. Masing-masing berisi 3.000 baris: TWK 750, TIU 1.050, TKP 1.200. Kode soal di ketiga file unik. TKP disimpan tanpa kunci tunggal dan dengan lima bobot opsi; kolom media belum menjadi asset storage. Import ulang berhasil tanpa menambah jumlah record, sehingga checkpoint ini idempotent. Karena source label menyatakan generated/internal dan catatan review masih ada, target 3.000 soal terverifikasi belum boleh dianggap tercapai.
+
+## Checkpoint integrasi Web API dan Mobile Android (cat-cpns-pro)
+
+Pembaruan 2026-11-07:
+- REST API Mobile Next.js lengkap tersedia pada `/api/v1/mobile/*`:
+  - Autentikasi Token: `POST /mobile/auth/login`, `POST /mobile/auth/register`, `GET /mobile/auth/me` menggunakan token Bearer ter-hash SHA-256 yang tersimpan pada tabel `auth_sessions`.
+  - Tryout Events: `GET /mobile/packages` menyajikan metadata durasi, komposisi 30 TWK, 35 TIU, 45 TKP, dan passing grade BKN (65/80/166/311).
+  - Engine Ujian: `POST /mobile/exam/start`, `GET /mobile/exam/questions`, `POST /mobile/exam/answer`, `POST /mobile/exam/submit`, `GET /mobile/exam/review`. Menjamin aturan keamanan server-side di mana kunci jawaban dan bobot disembunyikan selama sesi ujian aktif dan baru dibuka saat review pasca-submit.
+  - Materi & Peringkat: `GET /mobile/materials` dan `GET /mobile/leaderboard`.
+- Integrasi Aplikasi Android `cat-cpns-pro`:
+  - Layer jaringan Retrofit + Moshi (`NetworkModels.kt`, `CatApiService.kt`, `ApiClient.kt`).
+  - `SessionManager.kt` mengelola autentikasi dan token penyimpanan Android.
+  - Arsitektur hybrid online/offline pada `ExamRepository.kt`, `ExamViewModel.kt`, dan `MainViewModel.kt`: sinkronisasi realtime dengan backend Next.js saat online, dan otomatis fallback ke Room SQLite / bank soal lokal saat offline.
+  - Unit tests backend: 11 tests lulus 100%, typecheck TypeScript 0 error.
+- Desain Ulang Antarmuka Web (UI/UX) Standar Google AI Studio:
+  - Design system komprehensif pada `globals.css` dengan tipografi Plus Jakarta Sans, palet Navy/Gold/Emerald/Crimson, dan komponen responsif.
+  - Landing Page (`/`): Navbar sticky glassmorphism, hero banner visual, CTA card navy/gold, tabel ambang batas resmi BKN 2024, dan 3-column feature drills.
+  - Halaman Autentikasi (`/login` & `/register`): Dual-role tabs pill (Peserta vs Admin Pengelola), indikator kekuatan kata sandi dinamis, banner feedback error/sukses terintegrasi, dan 1-click quick-fill demo.
+  - Ruang Ujian Interaktif (`/exam/[sessionId]` & `ExamRunner`): Progress track gradient gold, countdown timer dengan peringatan warna saat kritis (<5 menit), radio button styling kustom, dan panel navigasi soal 110 butir dengan status warna (aktif, terjawab, belum).
+  - Lembar Hasil Ujian (`/results/[sessionId]`): Total score card gradient navy, badge kelulusan passing grade otomatis, kartu breakdown TWK/TIU/TKP dengan target capaian dan progress bar, serta disclaimer status soal draft.
+  - Dashboard Peserta (`/dashboard`): Ringkasan KPI performa, riwayat simulasi dengan badge kelulusan, dan shortcut ujian baru.
+- Sinkronisasi Reaktif Android Compose:
+  - `MainViewModel.kt`, `PackageSelectScreen.kt`, `StudyMaterialScreen.kt`, dan `LeaderboardScreen.kt` kini terhubung secara reaktif melalui Kotlin StateFlow, otomatis menyinkronkan data paket, cheat sheet materi, dan leaderboard nasional dari REST API backend Next.js saat jaringan tersedia.
+

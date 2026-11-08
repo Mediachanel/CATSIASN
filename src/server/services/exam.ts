@@ -90,6 +90,8 @@ export async function getQuestionForParticipant(userId: string, sessionId: strin
   return {
     position: question.position,
     prompt: question.questionVersion.prompt,
+    imagePath: question.questionVersion.imagePath,
+    imageAlt: question.questionVersion.imageAlt,
     category: question.questionVersion.question.category,
     topic: question.questionVersion.question.topic,
     options: asOptionOrder(question.optionOrder),

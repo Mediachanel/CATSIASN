@@ -1,0 +1,572 @@
+[
+  {
+    "code": "ORIGINAL-TRIAL-TWK-01",
+    "category": "TWK",
+    "topic": "Pancasila",
+    "question_text": "Dalam musyawarah warga, usulan kelompok minoritas tidak disetujui. Tindakan yang paling sesuai dengan nilai demokrasi Pancasila adalah ...",
+    "options": [
+      {
+        "label": "A",
+        "text": "Mengabaikan usulan tersebut sejak awal",
+        "score": 0
+      },
+      {
+        "label": "B",
+        "text": "Memberi kesempatan menyampaikan alasan dan mempertimbangkannya sebelum keputusan",
+        "score": 5
+      },
+      {
+        "label": "C",
+        "text": "Menunda keputusan hingga semua anggota memilih sama",
+        "score": 0
+      },
+      {
+        "label": "D",
+        "text": "Menetapkan keputusan berdasarkan kehendak ketua",
+        "score": 0
+      },
+      {
+        "label": "E",
+        "text": "Menyembunyikan hasil musyawarah",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Musyawarah menghargai pendapat setiap peserta dan mencari keputusan secara bertanggung jawab; perbedaan pendapat tetap perlu didengar.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TWK-02",
+    "category": "TWK",
+    "topic": "UUD 1945",
+    "question_text": "Menurut UUD Negara Republik Indonesia Tahun 1945, kekuasaan kehakiman dilakukan oleh ...",
+    "options": [
+      {
+        "label": "A",
+        "text": "Presiden dan menteri",
+        "score": 0
+      },
+      {
+        "label": "B",
+        "text": "DPR dan DPD",
+        "score": 0
+      },
+      {
+        "label": "C",
+        "text": "Mahkamah Agung dan badan peradilan di bawahnya serta Mahkamah Konstitusi",
+        "score": 5
+      },
+      {
+        "label": "D",
+        "text": "DPR dan Presiden",
+        "score": 0
+      },
+      {
+        "label": "E",
+        "text": "Komisi Pemilihan Umum",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Pasal 24 ayat (2) UUD 1945 menyebut Mahkamah Agung beserta badan peradilan di bawahnya dan Mahkamah Konstitusi sebagai pelaksana kekuasaan kehakiman.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TWK-03",
+    "category": "TWK",
+    "topic": "Bhinneka Tunggal Ika",
+    "question_text": "Dalam kegiatan layanan publik, warga menggunakan bahasa daerah yang tidak dipahami petugas. Cara yang paling mencerminkan penghormatan terhadap keberagaman adalah ...",
+    "options": [
+      {
+        "label": "A",
+        "text": "Menolak layanan hingga warga memakai bahasa petugas",
+        "score": 0
+      },
+      {
+        "label": "B",
+        "text": "Meminta warga pulang tanpa penjelasan",
+        "score": 0
+      },
+      {
+        "label": "C",
+        "text": "Mencari bantuan penerjemahan sambil tetap memperlakukan warga setara",
+        "score": 5
+      },
+      {
+        "label": "D",
+        "text": "Mendahulukan hanya warga yang berasal dari daerah yang sama",
+        "score": 0
+      },
+      {
+        "label": "E",
+        "text": "Membatasi layanan bagi kelompok tertentu",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Mengupayakan komunikasi dan pelayanan setara menghormati keberagaman sekaligus menjaga hak warga memperoleh layanan.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TWK-04",
+    "category": "TWK",
+    "topic": "Integritas",
+    "question_text": "Seorang pejabat menerima hadiah dari pemohon tepat setelah menyelesaikan layanan. Tindakan yang paling tepat adalah ...",
+    "options": [
+      {
+        "label": "A",
+        "text": "Menerima karena layanan telah selesai",
+        "score": 0
+      },
+      {
+        "label": "B",
+        "text": "Membagi hadiah dengan rekan kerja",
+        "score": 0
+      },
+      {
+        "label": "C",
+        "text": "Mencatat dan melaporkannya melalui mekanisme gratifikasi yang berlaku",
+        "score": 5
+      },
+      {
+        "label": "D",
+        "text": "Menyembunyikan hadiah agar tidak menimbulkan masalah",
+        "score": 0
+      },
+      {
+        "label": "E",
+        "text": "Meminta hadiah diganti dengan uang",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Hadiah terkait jabatan perlu ditangani sesuai ketentuan gratifikasi dan mekanisme pelaporan yang berlaku; penyelesaian layanan tidak otomatis membuat penerimaan hadiah wajar.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TWK-05",
+    "category": "TWK",
+    "topic": "Nasionalisme",
+    "question_text": "Sekolah mengadakan kerja bakti setelah banjir. Perilaku yang menunjukkan semangat persatuan adalah ...",
+    "options": [
+      {
+        "label": "A",
+        "text": "Membantu hanya teman satu kelompok",
+        "score": 0
+      },
+      {
+        "label": "B",
+        "text": "Menunggu kelompok lain menyelesaikan pekerjaan",
+        "score": 0
+      },
+      {
+        "label": "C",
+        "text": "Bekerja bersama tanpa membedakan latar belakang",
+        "score": 5
+      },
+      {
+        "label": "D",
+        "text": "Memilih lokasi berdasarkan kedekatan pribadi saja",
+        "score": 0
+      },
+      {
+        "label": "E",
+        "text": "Mengutamakan dokumentasi daripada bantuan",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Kerja bersama tanpa membedakan latar belakang merupakan penerapan persatuan dalam tindakan nyata.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TIU-01",
+    "category": "TIU",
+    "topic": "Persentase",
+    "question_text": "Sebuah paket latihan berharga Rp80.000. Setelah diskon 25%, berapa harga yang dibayar?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Rp55.000",
+        "score": 0
+      },
+      {
+        "label": "B",
+        "text": "Rp60.000",
+        "score": 5
+      },
+      {
+        "label": "C",
+        "text": "Rp65.000",
+        "score": 0
+      },
+      {
+        "label": "D",
+        "text": "Rp70.000",
+        "score": 0
+      },
+      {
+        "label": "E",
+        "text": "Rp75.000",
+        "score": 0
+      }
+    ],
+    "correct_answer": "B",
+    "explanation": "Diskon 25% dari Rp80.000 adalah Rp20.000; harga setelah diskon Rp60.000.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TIU-02",
+    "category": "TIU",
+    "topic": "Deret",
+    "question_text": "Tentukan bilangan berikutnya: 3, 7, 15, 31, ...",
+    "options": [
+      {
+        "label": "A",
+        "text": "45",
+        "score": 0
+      },
+      {
+        "label": "B",
+        "text": "47",
+        "score": 0
+      },
+      {
+        "label": "C",
+        "text": "55",
+        "score": 0
+      },
+      {
+        "label": "D",
+        "text": "63",
+        "score": 5
+      },
+      {
+        "label": "E",
+        "text": "65",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "Setiap bilangan dikali dua lalu ditambah satu: 31 ? 2 + 1 = 63.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TIU-03",
+    "category": "TIU",
+    "topic": "Silogisme",
+    "question_text": "Semua auditor adalah pegawai. Sebagian pegawai mengikuti pelatihan. Kesimpulan yang pasti benar adalah ...",
+    "options": [
+      {
+        "label": "A",
+        "text": "Semua auditor mengikuti pelatihan",
+        "score": 0
+      },
+      {
+        "label": "B",
+        "text": "Sebagian auditor pasti mengikuti pelatihan",
+        "score": 0
+      },
+      {
+        "label": "C",
+        "text": "Tidak ada auditor mengikuti pelatihan",
+        "score": 0
+      },
+      {
+        "label": "D",
+        "text": "Semua auditor adalah pegawai",
+        "score": 5
+      },
+      {
+        "label": "E",
+        "text": "Semua peserta pelatihan adalah auditor",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "Premis pertama secara langsung menyatakan semua auditor adalah pegawai; hubungan auditor dengan kelompok yang mengikuti pelatihan tidak dapat dipastikan.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TIU-04",
+    "category": "TIU",
+    "topic": "Perbandingan",
+    "question_text": "Perbandingan jumlah peserta pria dan wanita adalah 3 : 5. Jika jumlah seluruh peserta 64 orang, jumlah peserta wanita adalah ...",
+    "options": [
+      {
+        "label": "A",
+        "text": "24",
+        "score": 0
+      },
+      {
+        "label": "B",
+        "text": "32",
+        "score": 0
+      },
+      {
+        "label": "C",
+        "text": "36",
+        "score": 0
+      },
+      {
+        "label": "D",
+        "text": "40",
+        "score": 5
+      },
+      {
+        "label": "E",
+        "text": "48",
+        "score": 0
+      }
+    ],
+    "correct_answer": "D",
+    "explanation": "Total bagian 3 + 5 = 8; setiap bagian 64 ? 8 = 8 orang, sehingga jumlah wanita 5 ? 8 = 40 orang.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TIU-05",
+    "category": "TIU",
+    "topic": "Kecepatan",
+    "question_text": "Sebuah kendaraan menempuh 150 km dengan kecepatan tetap 60 km/jam. Berapa lama perjalanan tersebut?",
+    "options": [
+      {
+        "label": "A",
+        "text": "2 jam",
+        "score": 0
+      },
+      {
+        "label": "B",
+        "text": "2 jam 15 menit",
+        "score": 0
+      },
+      {
+        "label": "C",
+        "text": "2 jam 30 menit",
+        "score": 5
+      },
+      {
+        "label": "D",
+        "text": "2 jam 45 menit",
+        "score": 0
+      },
+      {
+        "label": "E",
+        "text": "3 jam",
+        "score": 0
+      }
+    ],
+    "correct_answer": "C",
+    "explanation": "Waktu = jarak ? kecepatan = 150 ? 60 = 2,5 jam atau 2 jam 30 menit.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TKP-01",
+    "category": "TKP",
+    "topic": "Pelayanan Publik",
+    "question_text": "Antrean layanan panjang dan seorang warga lansia tampak kesulitan memahami prosedur. Apa yang Anda lakukan?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Membantu menjelaskan prosedur dan mengarahkan sesuai ketentuan layanan prioritas",
+        "score": 5
+      },
+      {
+        "label": "B",
+        "text": "Meminta warga mencari informasi sendiri",
+        "score": 2
+      },
+      {
+        "label": "C",
+        "text": "Mengabaikannya sampai antrean selesai",
+        "score": 1
+      },
+      {
+        "label": "D",
+        "text": "Meminta warga lain menyelesaikan seluruh urusannya",
+        "score": 3
+      },
+      {
+        "label": "E",
+        "text": "Membantu tanpa memeriksa aturan sehingga mendahului semua pemohon",
+        "score": 4
+      }
+    ],
+    "correct_answer": null,
+    "explanation": "Respons A paling baik karena membantu secara aktif sambil mengikuti ketentuan prioritas. Opsi lain kurang membantu atau mengabaikan prosedur.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TKP-02",
+    "category": "TKP",
+    "topic": "Integritas",
+    "question_text": "Anda menemukan kesalahan data yang menguntungkan kenalan Anda dalam berkas yang sedang diproses. Apa yang Anda lakukan?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Membiarkannya agar hubungan baik terjaga",
+        "score": 2
+      },
+      {
+        "label": "B",
+        "text": "Memeriksa bukti dan menindaklanjuti koreksi sesuai prosedur",
+        "score": 5
+      },
+      {
+        "label": "C",
+        "text": "Mengubah berkas tanpa catatan",
+        "score": 1
+      },
+      {
+        "label": "D",
+        "text": "Memberi tahu kenalan agar menghapus bukti",
+        "score": 3
+      },
+      {
+        "label": "E",
+        "text": "Menunda proses tanpa penjelasan",
+        "score": 4
+      }
+    ],
+    "correct_answer": null,
+    "explanation": "Respons B paling baik karena memverifikasi kesalahan dan melakukan koreksi melalui prosedur yang dapat dipertanggungjawabkan.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TKP-03",
+    "category": "TKP",
+    "topic": "Kerja Sama",
+    "question_text": "Seorang rekan terlambat menyerahkan data yang diperlukan tim. Langkah yang paling tepat adalah ...",
+    "options": [
+      {
+        "label": "A",
+        "text": "Langsung menyalahkan rekan di grup besar",
+        "score": 1
+      },
+      {
+        "label": "B",
+        "text": "Mengerjakan tugas lain dan mengabaikan tenggat",
+        "score": 2
+      },
+      {
+        "label": "C",
+        "text": "Menghubungi rekan, mencari kendala, dan menyepakati langkah penyelesaian",
+        "score": 5
+      },
+      {
+        "label": "D",
+        "text": "Mengubah data sendiri tanpa konfirmasi",
+        "score": 3
+      },
+      {
+        "label": "E",
+        "text": "Menyembunyikan keterlambatan dari ketua tim",
+        "score": 4
+      }
+    ],
+    "correct_answer": null,
+    "explanation": "Respons C paling baik karena menyelesaikan hambatan melalui komunikasi dan koordinasi tanpa mengorbankan akurasi.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TKP-04",
+    "category": "TKP",
+    "topic": "Profesionalisme",
+    "question_text": "Anda diminta menyelesaikan tugas menggunakan sistem baru yang belum Anda kuasai, sementara tenggat semakin dekat. Apa yang Anda lakukan?",
+    "options": [
+      {
+        "label": "A",
+        "text": "Menolak tugas tanpa penjelasan",
+        "score": 2
+      },
+      {
+        "label": "B",
+        "text": "Mencoba secara acak pada data produksi",
+        "score": 1
+      },
+      {
+        "label": "C",
+        "text": "Mempelajari panduan dan meminta arahan sambil menyusun langkah kerja",
+        "score": 5
+      },
+      {
+        "label": "D",
+        "text": "Menyerahkan akun kepada orang lain",
+        "score": 3
+      },
+      {
+        "label": "E",
+        "text": "Menunda hingga tenggat terlewati",
+        "score": 4
+      }
+    ],
+    "correct_answer": null,
+    "explanation": "Respons C menggabungkan inisiatif belajar, konsultasi, dan perencanaan sehingga pekerjaan tetap bertanggung jawab.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  },
+  {
+    "code": "ORIGINAL-TRIAL-TKP-05",
+    "category": "TKP",
+    "topic": "Teknologi Informasi",
+    "question_text": "Anda menerima pesan yang mengaku dari bagian TI dan meminta kata sandi akun kantor melalui tautan asing. Tindakan yang paling tepat adalah ...",
+    "options": [
+      {
+        "label": "A",
+        "text": "Mengirim kata sandi agar akun tidak diblokir",
+        "score": 1
+      },
+      {
+        "label": "B",
+        "text": "Meneruskan tautan kepada seluruh rekan",
+        "score": 2
+      },
+      {
+        "label": "C",
+        "text": "Memeriksa permintaan melalui kanal resmi dan melaporkan pesan mencurigakan",
+        "score": 5
+      },
+      {
+        "label": "D",
+        "text": "Mengisi kata sandi lalu segera menggantinya",
+        "score": 3
+      },
+      {
+        "label": "E",
+        "text": "Mengklik tautan menggunakan akun rekan",
+        "score": 4
+      }
+    ],
+    "correct_answer": null,
+    "explanation": "Respons C melindungi kredensial dan memastikan identitas pengirim melalui kanal resmi; kata sandi tidak dibagikan melalui tautan yang meragukan.",
+    "status": "DRAFT",
+    "source": "Soal latihan orisinal, bukan soal ujian BKN",
+    "review_note": "Memerlukan telaah ahli sebelum dipublikasikan."
+  }
+]

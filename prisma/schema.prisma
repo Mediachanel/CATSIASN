@@ -150,6 +150,8 @@ model QuestionVersion {
   status           QuestionStatus       @default(DRAFT)
   prompt           String
   explanation      String?
+  imagePath        String?
+  imageAlt         String?
   isDemo           Boolean              @default(false)
   importBatchId    String?
   createdAt        DateTime             @default(now())

@@ -1,0 +1,6 @@
+{
+  "name": "CAT CPNS Pro",
+  "description": "Simulasi resmi CAT CPNS BKN terlengkap dengan passing grade SKD, live score real-time, grafik radar analitik, dan bank soal pembahasan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
